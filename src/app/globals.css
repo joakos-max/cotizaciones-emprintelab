@@ -143,8 +143,32 @@ h1, h2, h3, h4 {
   gap: var(--spacing-xl);
 }
 
+.preview-container {
+  overflow-x: auto;
+  padding: 10px;
+  background: white;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.preview-wrapper {
+  min-width: 800px;
+}
+
 @media (max-width: 1024px) {
   .grid-layout {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .container {
+    padding: var(--spacing-md);
+  }
+  .grid-layout {
+    gap: var(--spacing-md);
+  }
+  .premium-card {
+    padding: var(--spacing-md);
   }
 }

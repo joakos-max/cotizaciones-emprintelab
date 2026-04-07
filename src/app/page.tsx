@@ -59,7 +59,7 @@ export default function Home() {
   return (
     <main className="min-h-screen">
       {/* Dynamic Header */}
-      <div className="bg-white border-b border-outline sticky top-0 z-50">
+      <div className="bg-white border-b border-outline sticky top-0 z-[60]">
         <div className="container py-4 flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="flex items-center gap-3">
             <div 
@@ -123,16 +123,24 @@ export default function Home() {
           </div>
 
           {/* Right: Live Preview */}
-          <div className="sticky top-28 self-start flex flex-col gap-6">
-            <QuotePreview 
-              client={client} 
-              items={items} 
-              docType={docType}
-              currency={currency}
-              docNumber={docNumber}
-              docDate={docDate}
-              requiresAdvance={requiresAdvance}
-            />
+          <div className="lg:sticky lg:top-28 self-start flex flex-col gap-6 w-full overflow-hidden">
+            <h2 className="text-xl flex items-center gap-2 px-4 md:px-0">
+              <FileText size={20} className="text-accent" />
+              Vista Previa en Vivo
+            </h2>
+            <div className="preview-container">
+              <div className="preview-wrapper">
+                <QuotePreview 
+                  client={client} 
+                  items={items} 
+                  docType={docType}
+                  currency={currency}
+                  docNumber={docNumber}
+                  docDate={docDate}
+                  requiresAdvance={requiresAdvance}
+                />
+              </div>
+            </div>
             
             {/* BIG DOWNLOAD BUTTON UNDER PREVIEW */}
             <div className="flex justify-center w-full pb-10">
